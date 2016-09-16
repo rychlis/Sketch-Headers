@@ -41,13 +41,13 @@
     MSStyleImageRenderer *_styleImageRenderer;
     MSStyleTextRenderer *_styleTextRenderer;
     MSStyleFillRenderer *_styleFillRenderer;
-    NSGraphicsContext *_graphicsContext;
     struct CGContext *_savedContextRef;
     NSMutableArray *_bitmapTransparencyLayerSavedStates;
     double _alphaValue;
     NSMutableArray *_parentGroupStack;
     NSMutableArray *_artboardStack;
     long long _drawSymbolInstanceInBlock;
+    NSGraphicsContext *_graphicsContext;
     struct CGPoint _scrollOrigin;
     struct CGRect _dirtyRect;
     struct CGAffineTransform _initialTransform;
@@ -55,6 +55,7 @@
     struct CGAffineTransform _totalTransform;
 }
 
+@property(retain, nonatomic) NSGraphicsContext *graphicsContext; // @synthesize graphicsContext=_graphicsContext;
 @property(nonatomic) long long drawSymbolInstanceInBlock; // @synthesize drawSymbolInstanceInBlock=_drawSymbolInstanceInBlock;
 @property(retain, nonatomic) NSMutableArray *artboardStack; // @synthesize artboardStack=_artboardStack;
 @property(retain, nonatomic) NSMutableArray *parentGroupStack; // @synthesize parentGroupStack=_parentGroupStack;
@@ -64,7 +65,6 @@
 @property(nonatomic) int internalBlendMode; // @synthesize internalBlendMode=_internalBlendMode;
 @property(retain, nonatomic) NSMutableArray *bitmapTransparencyLayerSavedStates; // @synthesize bitmapTransparencyLayerSavedStates=_bitmapTransparencyLayerSavedStates;
 @property(nonatomic) struct CGContext *savedContextRef; // @synthesize savedContextRef=_savedContextRef;
-@property(retain, nonatomic) NSGraphicsContext *graphicsContext; // @synthesize graphicsContext=_graphicsContext;
 @property(retain, nonatomic) MSStyleFillRenderer *styleFillRenderer; // @synthesize styleFillRenderer=_styleFillRenderer;
 @property(retain, nonatomic) MSStyleTextRenderer *styleTextRenderer; // @synthesize styleTextRenderer=_styleTextRenderer;
 @property(retain, nonatomic) MSStyleImageRenderer *styleImageRenderer; // @synthesize styleImageRenderer=_styleImageRenderer;

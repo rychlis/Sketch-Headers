@@ -23,7 +23,7 @@
     MSShapeEditingBehavior *_behavior;
     MSLayerGroup *_parentGroupForInserting;
     NSArray *_shapePathLayers;
-    NSIndexPath *_indexPathForHighlightedSegment;
+    NSIndexPath *_pointInsertionIndexPath;
     NSIndexPath *_hoveringHandle;
     MSPointSnappingResult *_snaps;
     MSDragToSelectGestureRecognizer *_selectionGestureRecognizer;
@@ -40,7 +40,7 @@
 @property(copy, nonatomic) MSPointSnappingResult *snaps; // @synthesize snaps=_snaps;
 @property(readonly, nonatomic) NSIndexPath *hoveringHandle; // @synthesize hoveringHandle=_hoveringHandle;
 @property(readonly, nonatomic) struct CGPoint insertionPoint; // @synthesize insertionPoint=_insertionPoint;
-@property(readonly, nonatomic) NSIndexPath *indexPathForHighlightedSegment; // @synthesize indexPathForHighlightedSegment=_indexPathForHighlightedSegment;
+@property(readonly, nonatomic) NSIndexPath *pointInsertionIndexPath; // @synthesize pointInsertionIndexPath=_pointInsertionIndexPath;
 @property(copy, nonatomic) NSArray *shapePathLayers; // @synthesize shapePathLayers=_shapePathLayers;
 @property(retain, nonatomic) MSLayerGroup *parentGroupForInserting; // @synthesize parentGroupForInserting=_parentGroupForInserting;
 @property(nonatomic) BOOL isMakingRectSelection; // @synthesize isMakingRectSelection=_isMakingRectSelection;

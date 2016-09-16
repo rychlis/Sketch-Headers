@@ -17,10 +17,10 @@
     int ignoreDelegateNotificationsCounter;
     BOOL _isEditingText;
     NSTextStorage *_storageBeforeResize;
-    NSTextStorage *_storage;
     NSNumber *_defaultLineHeightValue;
     NSArray *_baselineOffsetsValue;
     id <MSTextLayerEditingDelegate> _editingDelegate;
+    NSTextStorage *_storage;
     struct CGSize _sizeBeforeResize;
     struct CGRect _previousRectCache;
 }
@@ -29,10 +29,10 @@
 + (void)setTextAlignment:(unsigned long long)arg1 forLayers:(id)arg2;
 + (void)maintainTextLayerBaselinesForLayers:(id)arg1 inBlock:(CDUnknownBlockType)arg2;
 @property(nonatomic) struct CGSize sizeBeforeResize; // @synthesize sizeBeforeResize=_sizeBeforeResize;
+@property(retain, nonatomic) NSTextStorage *storage; // @synthesize storage=_storage;
 @property(nonatomic) __weak id <MSTextLayerEditingDelegate> editingDelegate; // @synthesize editingDelegate=_editingDelegate;
 @property(copy, nonatomic) NSArray *baselineOffsetsValue; // @synthesize baselineOffsetsValue=_baselineOffsetsValue;
 @property(retain, nonatomic) NSNumber *defaultLineHeightValue; // @synthesize defaultLineHeightValue=_defaultLineHeightValue;
-@property(retain, nonatomic) NSTextStorage *storage; // @synthesize storage=_storage;
 @property(nonatomic) BOOL isEditingText; // @synthesize isEditingText=_isEditingText;
 @property(copy, nonatomic) NSTextStorage *storageBeforeResize; // @synthesize storageBeforeResize=_storageBeforeResize;
 @property(nonatomic) struct CGRect previousRectCache; // @synthesize previousRectCache=_previousRectCache;
