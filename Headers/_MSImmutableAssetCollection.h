@@ -6,7 +6,7 @@
 
 #import "MSImmutableModelObject.h"
 
-@class MSImmutableImageCollection, NSArray;
+@class MSImmutableImageCollection, MSImmutableImageCollection<MSImageCollection>, NSArray;
 
 @interface _MSImmutableAssetCollection : MSImmutableModelObject
 {
@@ -17,7 +17,7 @@
 }
 
 + (Class)mutableClass;
-@property(retain, nonatomic) MSImmutableImageCollection *imageCollection; // @synthesize imageCollection=_imageCollection;
+@property(retain, nonatomic) MSImmutableImageCollection<MSImageCollection> *imageCollection; // @synthesize imageCollection=_imageCollection;
 @property(retain, nonatomic) NSArray *gradients; // @synthesize gradients=_gradients;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(retain, nonatomic) NSArray *images; // @synthesize images=_images;

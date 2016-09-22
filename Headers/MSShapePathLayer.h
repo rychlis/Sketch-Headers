@@ -41,7 +41,7 @@
 - (struct CGPoint)convertPointFromPathCoordinates:(struct CGPoint)arg1;
 - (void)didEdit;
 - (void)simplify;
-- (struct CGPoint)pointCenteredAfterPointIndex:(long long)arg1;
+- (struct CGPoint)pointCenteredAfterPointIndex:(unsigned long long)arg1;
 @property(retain, nonatomic) NSBezierPath *bezierPath;
 - (id)bezierPathWithTransforms;
 - (id)bezierPathInRect:(struct CGRect)arg1;

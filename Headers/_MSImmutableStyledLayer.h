@@ -6,7 +6,7 @@
 
 #import "MSImmutableLayer.h"
 
-@class MSImmutableStyle;
+@class MSImmutableStyle, MSImmutableStyle<MSStyle>;
 
 @interface _MSImmutableStyledLayer : MSImmutableLayer
 {
@@ -14,7 +14,7 @@
 }
 
 + (Class)mutableClass;
-@property(retain, nonatomic) MSImmutableStyle *style; // @synthesize style=_style;
+@property(retain, nonatomic) MSImmutableStyle<MSStyle> *style; // @synthesize style=_style;
 - (void).cxx_destruct;
 - (id)keysDifferingFromObject:(id)arg1;
 - (BOOL)isEqualForDiffToObject:(id)arg1;

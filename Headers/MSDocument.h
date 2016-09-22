@@ -19,12 +19,12 @@
 
 @interface MSDocument : NSDocument <MSSidebarControllerDelegate, MSEventHandlerManagerDelegate, BCSideBarViewControllerDelegate, NSMenuDelegate, NSToolbarDelegate, NSWindowDelegate, MSBasicDelegate, MSDocumentDataDelegate>
 {
+    BOOL _hasOpenedImageFile;
+    BOOL _nextReadFromURLIsReload;
     BOOL _layerListRefreshIsScheduled;
     BOOL _temporarilyDisableSelectionHiding;
     BOOL _cacheFlushInProgress;
     BOOL _hasScheduledDocumentDidChange;
-    BOOL _hasOpenedImageFile;
-    BOOL _nextReadFromURLIsReload;
     NSArray *_exportableLayerSelection;
     NSWindow *_documentWindow;
     NSView *_messageView;
@@ -39,6 +39,8 @@
     MSHistoryMaker *_historyMaker;
     MSInspectorController *_inspectorController;
     MSFontList *_fontList;
+    MSLayerArray *_selectedLayersA;
+    MSContentDrawViewController *_currentContentViewController;
     MSImmutableDocumentData *_documentDataUsedForLayerList;
     BCSideBarViewController *_sidebarController;
     NSMutableSet *_layersWithHiddenSelectionHandles;
@@ -47,8 +49,6 @@
     NSMutableDictionary *_mutableUIMetadata;
     MSBackButtonWindowController *_backButtonController;
     NSMutableDictionary *_originalViewportsForEditedSymbols;
-    MSLayerArray *_selectedLayersA;
-    MSContentDrawViewController *_currentContentViewController;
 }
 
 + (id)currentDocument;
@@ -56,10 +56,6 @@
 + (id)writableTypes;
 + (id)readableTypes;
 + (BOOL)autosavesInPlace;
-@property(nonatomic) BOOL nextReadFromURLIsReload; // @synthesize nextReadFromURLIsReload=_nextReadFromURLIsReload;
-@property(retain, nonatomic) MSContentDrawViewController *currentContentViewController; // @synthesize currentContentViewController=_currentContentViewController;
-@property(nonatomic) BOOL hasOpenedImageFile; // @synthesize hasOpenedImageFile=_hasOpenedImageFile;
-@property(copy, nonatomic) MSLayerArray *selectedLayersA; // @synthesize selectedLayersA=_selectedLayersA;
 @property(nonatomic) BOOL hasScheduledDocumentDidChange; // @synthesize hasScheduledDocumentDidChange=_hasScheduledDocumentDidChange;
 @property(retain, nonatomic) NSMutableDictionary *originalViewportsForEditedSymbols; // @synthesize originalViewportsForEditedSymbols=_originalViewportsForEditedSymbols;
 @property(retain, nonatomic) MSBackButtonWindowController *backButtonController; // @synthesize backButtonController=_backButtonController;
@@ -72,6 +68,10 @@
 @property(retain, nonatomic) BCSideBarViewController *sidebarController; // @synthesize sidebarController=_sidebarController;
 @property(nonatomic) BOOL layerListRefreshIsScheduled; // @synthesize layerListRefreshIsScheduled=_layerListRefreshIsScheduled;
 @property(retain, nonatomic) MSImmutableDocumentData *documentDataUsedForLayerList; // @synthesize documentDataUsedForLayerList=_documentDataUsedForLayerList;
+@property(nonatomic) BOOL nextReadFromURLIsReload; // @synthesize nextReadFromURLIsReload=_nextReadFromURLIsReload;
+@property(retain, nonatomic) MSContentDrawViewController *currentContentViewController; // @synthesize currentContentViewController=_currentContentViewController;
+@property(nonatomic) BOOL hasOpenedImageFile; // @synthesize hasOpenedImageFile=_hasOpenedImageFile;
+@property(copy, nonatomic) MSLayerArray *selectedLayersA; // @synthesize selectedLayersA=_selectedLayersA;
 @property(retain, nonatomic) MSFontList *fontList; // @synthesize fontList=_fontList;
 @property(retain, nonatomic) MSInspectorController *inspectorController; // @synthesize inspectorController=_inspectorController;
 @property(retain, nonatomic) MSHistoryMaker *historyMaker; // @synthesize historyMaker=_historyMaker;
