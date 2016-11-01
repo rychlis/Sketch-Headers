@@ -8,7 +8,7 @@
 
 #import "BCPopoverDelegate.h"
 
-@class BCPopover, NSString;
+@class BCPopover, MSPopUpToolbarItem, NSString;
 
 @interface MSPopoverAction : MSDocumentAction <BCPopoverDelegate>
 {
@@ -20,6 +20,7 @@
 - (BOOL)showInToolbar;
 - (id)menu;
 - (BOOL)hasSubMenu;
+@property(readonly) MSPopUpToolbarItem *popupToolbarItem;
 - (id)viewForAttachingPopover:(id)arg1;
 - (void)closePopover;
 - (void)popoverWillClose:(id)arg1;

@@ -23,6 +23,7 @@
 + (id)bitmapLayerWithImageFromPasteboard:(id)arg1;
 - (id)NSImage;
 @property(readonly, nonatomic) BOOL canReduceImageSize;
+- (BOOL)canInsertIntoGroup:(id)arg1;
 @property(readonly, nonatomic) struct CGSize targetSizeForReduction;
 - (void)reduceImageSize;
 - (BOOL)hasNineSliceEnabled;
